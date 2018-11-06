@@ -60,7 +60,7 @@ func get_all_meshes(node):
 		print(child)
 		if child is MeshInstance:
 			meshes.append(child)
-		if child.get_child_count() > 0:
+		if child.get_child_count() > 1:
 			array2 = get_all_meshes(child)
 			for element in array2:
 				meshes.append(element)
