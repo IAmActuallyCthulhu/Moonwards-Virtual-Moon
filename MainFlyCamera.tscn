@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=1]
 [ext_resource path="res://scripts/Performance Monitor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://export/CernansPromise.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SphereShape" id=1]
+
+margin = 0.04
+radius = 1.0
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0 )
@@ -51,6 +56,20 @@ use_gui = true
 gui_action = "ui_cancel"
 
 [node name="Control" parent="Camera" instance=ExtResource( 2 )]
+
+[node name="KinematicBody" type="KinematicBody" parent="Camera"]
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+move_lock_x = false
+move_lock_y = false
+move_lock_z = false
+collision/safe_margin = 0.001
+
+[node name="CollisionShape" type="CollisionShape" parent="Camera/KinematicBody"]
+shape = SubResource( 1 )
+disabled = false
 
 [node name="_Scene" parent="." instance=ExtResource( 3 )]
 

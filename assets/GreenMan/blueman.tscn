@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/GreenMan/KinematicBody.gd" type="Script" id=1]
 [ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=2]
 [ext_resource path="res://assets/GreenMan/FPSCamera.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Performance Monitor.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 
@@ -100,13 +101,13 @@ fixed_up = true
 accel = 19.0
 deaccel = 14.0
 sharp_turn_threshold = 140
-JumpHeight = 7.0
+JumpHeight = 1.5
 AllowChangeCamera = false
 FPSCamera = true
 thRDPersCamera = false
 WALKSPEED = 3.1
 RUNSPEED = 4.5
-view_sensitivity = 5
+view_sensitivity = 0.5
 weight = 1
 grav = 1.6
 
@@ -208,8 +209,10 @@ current = true
 fov = 70.0
 size = 1.0
 near = 0.05
-far = 100.0
+far = 10000.0
 script = ExtResource( 3 )
+
+[node name="Control" parent="Pivot/FPSCamera" instance=ExtResource( 4 )]
 
 [node name="3RDPersCamera" type="Camera" parent="Pivot"]
 keep_aspect = 1

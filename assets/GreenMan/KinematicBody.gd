@@ -11,7 +11,7 @@ export(bool) var fixed_up = true
 export(float) var accel = 19.0
 export(float) var deaccel = 14.0
 export(float) var sharp_turn_threshold = 140
-export(float) var JumpHeight = 7.0
+export(float) var JumpHeight = 1.5
 
 
 export(bool) var AllowChangeCamera = false
@@ -28,7 +28,7 @@ var up
 #Options
 export(float) var WALKSPEED = 3.1
 export(float) var RUNSPEED = 4.5
-export(float) var view_sensitivity = 5
+export(float) var view_sensitivity = 0.5
 export var weight= 1
 
 ##Physics
