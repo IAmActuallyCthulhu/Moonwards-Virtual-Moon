@@ -4,7 +4,7 @@ var LOD2
 export(float)var LOD1MAX = 50
 export(float)var LOD1MIN = 0
 export(float)var LOD2MAX = 100
-export(float)var LOD2MIN = 49
+export(float)var LOD2MIN = 50
 export(Mesh) var NearMesh = null
 export(Mesh) var FarMesh = null 
 var LOD2_visible
@@ -17,7 +17,7 @@ func _process(delta):
 	
 	var cameradist = (get_tree().get_root().get_camera().get_global_transform().origin - self.get_global_transform().origin).length()
 	print(cameradist)
-	if cameradist > LOD2MIN and cameradist <= LOD2MAX and not LOD2_visible:
+	if cameradist >= LOD2MIN and cameradist <= LOD2MAX and not LOD2_visible:
 		mesh = FarMesh
 		LOD2_visible = true
 	else:

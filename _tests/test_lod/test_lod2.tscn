@@ -51,7 +51,7 @@ script = ExtResource( 1 )
 LOD1MAX = 50
 LOD1MIN = 0
 LOD2MAX = 100
-LOD2MIN = 49
+LOD2MIN = 50
 NearMesh = SubResource( 2 )
 FarMesh = SubResource( 1 )
 
