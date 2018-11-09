@@ -17,7 +17,7 @@ export(float) var JumpHeight = 1.5
 export(bool) var AllowChangeCamera = false
 export(bool) var FPSCamera = true
 export(bool) var thRDPersCamera = false
-
+var flies = false
 var translationcamera
 
 
@@ -71,13 +71,21 @@ func adjust_facing(p_facing, p_target, p_step, p_adjust_rate, current_gn):
 func _physics_process(delta):
 #Changes acceleration and max speed.
 	if (Input.is_action_pressed("run")):
-		max_speed=RUNSPEED
+		if not flies: 
+			max_speed=RUNSPEED
+		else: 
+			max_speed=RUNSPEED*2
 	else:
-		max_speed=WALKSPEED
+		if  not flies: 
+			max_speed=WALKSPEED
+		else:
+			max_speed=WALKSPEED*2
 
-
-	linear_velocity += gravity*delta/weight # Apply gravity
-
+	if not flies:
+		linear_velocity += gravity*delta/weight # Apply gravity
+	else:
+			linear_velocity.y = 0
+			pass
 	
 	if fixed_up:
 		 up = Vector3(0,1,0) # (up is against gravity)
@@ -114,15 +122,24 @@ func _physics_process(delta):
 	if (Input.is_action_pressed("ui_right")):
 		dir += aim[0]
 		$Pivot/FPSCamera.Znoice =  -1*hspeed
+		
+	if (Input.is_action_pressed("toggle_fly")):
+		if flies:
+			flies = false
+		else:
+			flies = true
+	
 
-	var jump_attempt = Input.is_action_pressed("jump")
+	var jump_attempt = Input.is_action_pressed("jump") or Input.is_action_pressed("ui_page_up")
+	var crouch_attempt = Input.is_action_pressed("ui_mlook") or Input.is_action_pressed("ui_page_down")
+	
 	
 #END OF THE BLOCK
 
 
 	var target_dir = (dir - up*dir.dot(up)).normalized()
 
-	if (is_on_floor()): #Only lets the character change it's facing direction when it's on the floor.
+	if (is_on_floor() or flies): #Only lets the character change it's facing direction when it's on the floor or flying.
 		var sharp_turn = hspeed > 0.1 and rad2deg(acos(target_dir.dot(hdir))) > sharp_turn_threshold
 
 		if (dir.length() > 0.1 and !sharp_turn):
@@ -159,8 +176,23 @@ func _physics_process(delta):
 		if (not jumping and jump_attempt):
 			vertical_velocity = JumpHeight
 			jumping = true
+		
+			
 			
 	else:
+		if flies:
+			if (hspeed < max_speed):
+				hspeed += accel*delta
+			else:
+				if hspeed > 0:
+					hspeed -= deaccel*delta
+		
+					
+		if crouch_attempt and flies:
+			vertical_velocity = -1
+		if jump_attempt and flies:
+			vertical_velocity = 1
+			
 		if (vertical_velocity > 0):
 			pass
 			#print(ANIM_AIR_UP) #Placeholder
@@ -176,7 +208,9 @@ func _physics_process(delta):
 				hspeed = hspeed - (deaccel*0.2)*delta
 				if (hspeed < 0):
 					hspeed = 0
-
+					
+				
+				
 				horizontal_velocity = hdir*hspeed
 
 	if (jumping and vertical_velocity < 0):
