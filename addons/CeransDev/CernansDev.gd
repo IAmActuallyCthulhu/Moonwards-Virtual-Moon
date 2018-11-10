@@ -110,6 +110,39 @@ func cs_save(dock):
 	yield(get_tree().create_timer(0.1), "timeout")
 	emit_signal("end_processing")
 
+var lightscale = {}
+
+func lg_scale(dock):
+	var down = true
+	var scene 
+	var nodes
+	if lightscale.has("scene"):
+		down = false
+		scene = lightscale.scene
+		nodes = lightscale.nodes
+	else:
+		scene = get_scene()
+		nodes = get_nodes_type(scene, "OmniLight", true)
+		array_add(nodes, get_nodes_type(scene, "SpotLight", true))
+	for path in nodes:
+		var obj = scene.get_node(path)
+		var scale = 1
+		if down :
+			scale /= 20.0
+		else:
+			scale *= 20.0
+		if obj.get_class() == "OmniLight":
+			obj.omni_range = scale * obj.omni_range
+		if obj.get_class() == "SpotLight":
+			obj.spot_range = scale * obj.spot_range
+	if down:
+		lightscale["scene"] = scene
+		lightscale["nodes"] = nodes
+	else:
+		lightscale = {}
+	yield(get_tree().create_timer(0.1), "timeout")
+	emit_signal("end_processing")
+
 func bl_save(dock):
 	#print("bl_save:", dock)
 	#yield(get_tree().create_timer(5.0), "timeout")
@@ -176,6 +209,7 @@ func grp_list(dock):
 func _ready():
 	print("dev plugin ready")
 	dock.plugin = self
+	bt_connect("lg_scale")
 	bt_connect("bl_save")
 	bt_connect("grp_list")
 	bt_connect("cs_list")
