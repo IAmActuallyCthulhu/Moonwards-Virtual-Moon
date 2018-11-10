@@ -143,6 +143,24 @@ func lg_scale(dock):
 	yield(get_tree().create_timer(0.1), "timeout")
 	emit_signal("end_processing")
 
+var bl_scale_down = true
+
+func bl_scale(dock):
+	var scale = 1
+	if bl_scale_down:
+		scale /= 20.0
+	else:
+		scale *= 20.0
+	var scene = get_scene()
+	for path in get_nodes_type(scene, "BakedLightmap", true):
+		print("BL: %s" % path)
+		var obj = scene.get_node(path)
+		obj.bake_extents = scale * obj.bake_extents
+	bl_scale_down = not bl_scale_down
+	yield(get_tree().create_timer(0.1), "timeout")
+	emit_signal("end_processing")
+
+
 func bl_save(dock):
 	#print("bl_save:", dock)
 	#yield(get_tree().create_timer(5.0), "timeout")
@@ -210,6 +228,7 @@ func _ready():
 	print("dev plugin ready")
 	dock.plugin = self
 	bt_connect("lg_scale")
+	bt_connect("bl_scale")
 	bt_connect("bl_save")
 	bt_connect("grp_list")
 	bt_connect("cs_list")

@@ -10,6 +10,7 @@ signal cs_save
 signal bl_save
 signal grp_list
 signal lg_scale
+signal bl_scale
 
 var collisions
 var col
@@ -131,3 +132,9 @@ func _on_LG_scale_pressed():
 	emit_signal("lg_scale", self)
 	yield(plugin, "end_processing")
 # 	find_node("LG_scale").pressed = false
+
+
+func _on_BL_scale_pressed():
+	emit_signal("bl_scale", self)
+	yield(plugin, "end_processing")
+# 	find_node("BL_scale").pressed = false

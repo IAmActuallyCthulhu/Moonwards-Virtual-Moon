@@ -17,15 +17,15 @@ margin_bottom = 290.0
 [node name="VSplitContainer2" type="VSplitContainer" parent="CenterContainer"]
 margin_left = 23.0
 margin_right = 186.0
-margin_bottom = 312.0
+margin_bottom = 336.0
 
 [node name="VSplitContainer" type="VSplitContainer" parent="CenterContainer/VSplitContainer2"]
 margin_right = 163.0
-margin_bottom = 312.0
+margin_bottom = 336.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VSplitContainer2/VSplitContainer"]
 margin_right = 163.0
-margin_bottom = 238.0
+margin_bottom = 262.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -56,67 +56,74 @@ margin_bottom = 38.0
 toggle_mode = true
 text = "Light Scale Down/Up"
 
-[node name="BL_save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
+[node name="BL_scale" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 42.0
 margin_right = 163.0
 margin_bottom = 62.0
 toggle_mode = true
-text = "Save BakedLight Data"
+text = "Baklight BBox scale"
 
-[node name="ListGrp" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
+[node name="BL_save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 66.0
 margin_right = 163.0
 margin_bottom = 86.0
+toggle_mode = true
+text = "Save BakedLight Data"
+
+[node name="ListGrp" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
+margin_top = 90.0
+margin_right = 163.0
+margin_bottom = 110.0
 hint_tooltip = "print statistics about grous in scenes, so as overall groups"
 toggle_mode = true
 text = "List Groups"
 
 [node name="CS_list" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
-margin_top = 90.0
-margin_right = 163.0
-margin_bottom = 110.0
-toggle_mode = true
-text = "List Collision shapes"
-
-[node name="CS_make" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 114.0
 margin_right = 163.0
 margin_bottom = 134.0
 toggle_mode = true
-text = "Make Collision shapes"
+text = "List Collision shapes"
 
-[node name="CS_delete" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
+[node name="CS_make" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 138.0
 margin_right = 163.0
 margin_bottom = 158.0
 toggle_mode = true
-text = "Delete Collision shapes"
+text = "Make Collision shapes"
 
-[node name="CS_save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
+[node name="CS_delete" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
 margin_top = 162.0
 margin_right = 163.0
 margin_bottom = 182.0
 toggle_mode = true
+text = "Delete Collision shapes"
+
+[node name="CS_save" type="Button" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
+margin_top = 186.0
+margin_right = 163.0
+margin_bottom = 206.0
+toggle_mode = true
 text = "Save Collision shapes"
 
 [node name="opt_selected" type="CheckBox" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
-margin_top = 186.0
+margin_top = 210.0
 margin_right = 163.0
-margin_bottom = 210.0
+margin_bottom = 234.0
 hint_tooltip = "apply action only to selected objects"
 text = "Only Selected"
 
 [node name="opt_recurent" type="CheckBox" parent="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer"]
-margin_top = 214.0
+margin_top = 238.0
 margin_right = 163.0
-margin_bottom = 238.0
+margin_bottom = 262.0
 hint_tooltip = "apply action to onle current scene or to all child scenes"
 text = "All sub scenes"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VSplitContainer2/VSplitContainer"]
-margin_top = 250.0
+margin_top = 274.0
 margin_right = 163.0
-margin_bottom = 312.0
+margin_bottom = 336.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -199,6 +206,7 @@ window_title = "Click!"
 
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/Create" to="." method="_on_Create_pressed"]
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/LG_scale" to="." method="_on_LG_scale_pressed"]
+[connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/BL_scale" to="." method="_on_BL_scale_pressed"]
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/BL_save" to="." method="_on_BL_save_pressed"]
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/ListGrp" to="." method="_on_ListGrp_pressed"]
 [connection signal="pressed" from="CenterContainer/VSplitContainer2/VSplitContainer/VBoxContainer/CS_list" to="." method="_on_CS_list_pressed"]
