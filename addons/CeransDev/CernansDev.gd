@@ -10,7 +10,7 @@ var options = {
 	cs_groups = [ "cs", "cs_convex", "floor", "wall"],
 	cs_convex = ["cs_convex"],
 	cs_trimesh = ["cs", "floor", "wall"],
-	bakedlight = {path = "res://lightmaps", ext = "_bldata.res" }
+	bakedlight = {path = "lightmaps", ext = "_bldata.res" }
 }
 
 #
@@ -177,7 +177,7 @@ func bl_save(dock):
 		var filename = s.trim_prefix(s.get_base_dir()+"/").trim_suffix("."+s.get_extension())
 		var id = String(path).hash()
 		obj.light_data.resource_name = "%s_%s_%s" % [filename, id, obj.name]
-		var name_tosave = "%s/%s%s" % [options.bakedlight.path, obj.light_data.resource_name, options.bakedlight.ext]
+		var name_tosave = "%s/%s/%s_%s%s" % [s.get_base_dir(), options.bakedlight.path, filename, id, options.bakedlight.ext]
 		var name_toremove
 		var subresource = s.get_extension().match("tscn::*")
 		var changed = false
