@@ -1,20 +1,20 @@
 [gd_scene load_steps=1 format=2]
-[ext_resource id=1 path="LavastoneDark1.tres" type="SpatialMaterial"]
+[ext_resource id=1 path="materials/LavastoneDark1.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=2 path="DeepVanilla.tres" type="SpatialMaterial"]
+[ext_resource id=2 path="materials/DeepVanilla.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=3 path="Glass.tres" type="SpatialMaterial"]
+[ext_resource id=3 path="materials/Glass.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=4 path="ChapelBlue.tres" type="SpatialMaterial"]
+[ext_resource id=4 path="materials/ChapelBlue.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=5 path="Lavastone1.tres" type="SpatialMaterial"]
+[ext_resource id=5 path="materials/Lavastone1.tres" type="SpatialMaterial"]
 
 
-[ext_resource id=6 path="LavastoneDark2.tres" type="SpatialMaterial"]
+[ext_resource id=6 path="materials/LavastoneDark2.tres" type="SpatialMaterial"]
 
 [sub_resource id=1 type="ArrayMesh"]
 
