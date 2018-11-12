@@ -214,6 +214,9 @@ script = ExtResource( 3 )
 
 [node name="Control" parent="Pivot/FPSCamera" instance=ExtResource( 4 )]
 
+[node name="Target" type="Position3D" parent="Pivot/FPSCamera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.937118 )
+
 [node name="3RDPersCamera" type="Camera" parent="Pivot"]
 keep_aspect = 1
 cull_mask = 1048575
