@@ -139,8 +139,9 @@ func _physics_process(delta):
 		dir += aim[0]
 		$Pivot/FPSCamera.Znoice =  -1*hspeed
 		
-
 	
+	if flies:
+		vertical_velocity += dir.y
 
 	var jump_attempt = Input.is_action_pressed("jump") or Input.is_action_pressed("ui_page_up")
 	var crouch_attempt = Input.is_action_pressed("ui_mlook") or Input.is_action_pressed("ui_page_down")
@@ -193,6 +194,7 @@ func _physics_process(delta):
 			
 	else:
 		if flies:
+			
 			if (hspeed < max_speed):
 				hspeed += accel*delta
 			else:
@@ -210,10 +212,6 @@ func _physics_process(delta):
 			#print(ANIM_AIR_DOWN)
 		if (dir.length() > 0.1):
 			horizontal_velocity += target_dir*accel*delta
-			#if flies:
-				#vertical_velocity += dir*accel*delta*up
-				#if (vertical_velocity.length() > max_speed):
-				#	vertical_velocity = vertical_velocity.normalized()*max_speed
 				
 			if (horizontal_velocity.length() > max_speed):
 				horizontal_velocity = horizontal_velocity.normalized()*max_speed
@@ -250,7 +248,7 @@ func _physics_process(delta):
 			
 			
 		if vertical_velocity > max_speed:
-			vertical_velocity = (vertical_velocity/vertical_velocity)*max_speed
+			vertical_velocity = max_speed
 
 
 		

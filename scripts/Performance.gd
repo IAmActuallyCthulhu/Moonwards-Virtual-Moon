@@ -10,6 +10,7 @@ func _process(delta):
 	$VRAM.text = str(Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED))
 	
 	if get_parent() is Camera:
-		$x.text = str(get_parent().translation.x)
-		$y.text = str(get_parent().translation.y)
-		$z.text = str(get_parent().translation.z)
+		var ORIGIN = get_parent().to_global(get_parent().transform.origin)
+		$x.text = str(ORIGIN.x)
+		$y.text = str(ORIGIN.y)
+		$z.text = str(ORIGIN.z)
