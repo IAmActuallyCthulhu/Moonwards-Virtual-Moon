@@ -1,83 +1,35 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=1]
-[ext_resource path="res://scripts/Performance Monitor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/PerformanceMonitor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=2]
 [ext_resource path="res://export/CernansPromise.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SphereShape" id=1]
 
-margin = 0.04
-radius = 1.0
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0 )
-_sections_unfolded = [ "Transform" ]
+
+[node name="Control" parent="." instance=ExtResource( 1 )]
+source_xyz = NodePath("../Camera")
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.853542, 0, 0.521025, 0, 1, 0, -0.521025, 0, 0.853542, 1680.25, 135.908, -50.0178 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = false
-fov = 70.0
-size = 1.0
-near = 0.05
 far = 10000.0
-script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-enabled = true
-mouse_mode = 2
-mouselook = true
-sensitivity = 0.5
-smoothness = 0.5
-privot = null
-distance = 5.0
-rotate_privot = false
-collisions = true
-yaw_limit = 360
-pitch_limit = 360
-movement = true
-acceleration = 0.5
-deceleration = 0.5
+script = ExtResource( 2 )
 max_speed = Vector3( 25, 25, 25 )
-local = true
-forward_action = "ui_up"
-backward_action = "ui_down"
-left_action = "ui_left"
-right_action = "ui_right"
-up_action = "ui_page_up"
-down_action = "ui_page_down"
-ui_mlook = "ui_mlook"
-use_gui = true
-gui_action = "ui_cancel"
-
-[node name="Control" parent="Camera" instance=ExtResource( 2 )]
 
 [node name="KinematicBody" type="KinematicBody" parent="Camera"]
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-move_lock_x = false
-move_lock_y = false
-move_lock_z = false
-collision/safe_margin = 0.001
 
 [node name="CollisionShape" type="CollisionShape" parent="Camera/KinematicBody"]
 shape = SubResource( 1 )
-disabled = false
 
 [node name="_Scene" parent="." instance=ExtResource( 3 )]
 
 [node name="Teleport" type="Spatial" parent="."]
 
 [node name="0,0,0" type="Spatial" parent="Teleport"]
-transform = Transform( 0.5, -0.866025, 3.64245e-008, 0.866025, 0.5, -5.24717e-008, 2.72296e-008, 5.77803e-008, 1, 0, 0, 0 )
-_sections_unfolded = [ "Transform" ]
+transform = Transform( 0.5, -0.866025, 3.64245e-08, 0.866025, 0.5, -5.24717e-08, 2.72296e-08, 5.77803e-08, 1, 0, 0, 0 )
 
 [node name="HVAC-Anchors" type="Spatial" parent="Teleport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1294.41, -148.459, -346.134 )
@@ -161,19 +113,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.1418, 1999.31, 369.343 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1545.76, 135.954, 132.688 )
 
 [node name="Passage-Mouth-North-BigAtrium-FirstGalley002" type="Spatial" parent="Teleport"]
-transform = Transform( -0.999969, 0.00781728, -3.41704e-010, 0, -4.37114e-008, -1, -0.00781728, -0.999969, 4.37101e-008, 1669.86, 124.951, -297.251 )
+transform = Transform( -0.999969, 0.00781728, -3.41704e-10, 0, -4.37114e-08, -1, -0.00781728, -0.999969, 4.37101e-08, 1669.86, 124.951, -297.251 )
 
 [node name="Passage-BigAtrium-FirstGallery001" type="Spatial" parent="Teleport"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 1669.12, 126.534, -311.859 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1669.12, 126.534, -311.859 )
 
 [node name="Passage-FirstGallery-BigAtrium-BottomFloor" type="Spatial" parent="Teleport"]
 transform = Transform( 2.49722, 0, -0.354413, 0, 2.52224, 0, 0.354413, 0, 2.49722, 1669.11, 118.879, -258.372 )
 
 [node name="Passage-Mouth-North-BigAtrium-FirstGalley" type="Spatial" parent="Teleport"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 1664.23, 126.534, -241.495 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1664.23, 126.534, -241.495 )
 
 [node name="Passage-BigAtrium-FirstGallery" type="Spatial" parent="Teleport"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 1664.23, 126.534, -241.604 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1664.23, 126.534, -241.604 )
 
 [node name="SatelliteDish-NearSpaceComms" type="Spatial" parent="Teleport"]
 transform = Transform( 1.89483, -0.517287, -0.376869, 0, 1.17769, -1.61649, 0.640013, 1.53149, 1.11576, 1690.5, 169.042, -115.366 )
@@ -198,14 +150,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2210.66, 160.168, -561.586 )
 
 [node name="Camera002" type="Camera" parent="Teleport"]
 transform = Transform( -0.852916, -0.105768, 0.511222, 0.000197993, 0.979196, 0.202918, -0.522049, 0.173174, -0.83515, 1976.48, 184.471, -195.227 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = null
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = false
 fov = 49.1343
 size = 6.0
 near = 0.1
@@ -251,7 +195,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1545.76, 135.954, 132.688 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1545.76, 135.954, 132.688 )
 
 [node name="LosPortales" type="Spatial" parent="Teleport"]
-transform = Transform( 0.968716, -0.248172, 1.0848e-008, 0, -4.37114e-008, -1, 0.248172, 0.968716, -4.23439e-008, 1564.93, 137.311, 59.5255 )
+transform = Transform( 0.968716, -0.248172, 1.0848e-08, 0, -4.37114e-08, -1, 0.248172, 0.968716, -4.23439e-08, 1564.93, 137.311, 59.5255 )
 
 [node name="MainColonyAirlock" type="Spatial" parent="Teleport"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1754.17, 167.526, -315.98 )
@@ -312,511 +256,121 @@ editor/display_folded = true
 visible = false
 
 [node name="Point021" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, -1564.11, -1227.19, -210.423 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1564.11, -1227.19, -210.423 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point022" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, -1476.66, -1240.6, -473.686 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1476.66, -1240.6, -473.686 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point023" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, -1645.73, -1209.33, 43.4499 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1645.73, -1209.33, 43.4499 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point024" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, -1786.03, -1160.39, 333.326 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1786.03, -1160.39, 333.326 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point025" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, -1377.2, -1224.34, -777.421 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -1377.2, -1224.34, -777.421 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point020" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1790.24, 127.91, 581.171 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1790.24, 127.91, 581.171 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point019" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1740.33, 142.117, 563.957 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1740.33, 142.117, 563.957 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point018" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1669.11, 147.797, 647.847 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1669.11, 147.797, 647.847 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point017" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1724.82, 132.782, 690.542 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1724.82, 132.782, 690.542 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point016" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1780.38, 126.379, 651.395 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1780.38, 126.379, 651.395 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point015" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1649.59, 152.673, 582.251 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1649.59, 152.673, 582.251 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point008" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1625.87, 186.942, -284.592 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1625.87, 186.942, -284.592 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point009" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1666.78, 186.824, -279.275 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1666.78, 186.824, -279.275 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point010" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1580.73, 158.716, -290.511 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1580.73, 158.716, -290.511 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point011" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1536.72, 129.988, -296.199 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1536.72, 129.988, -296.199 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point012" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1484.9, 100.078, -302.961 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1484.9, 100.078, -302.961 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point013" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1506.68, 82.1842, -324.638 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1506.68, 82.1842, -324.638 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point014" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1455.36, 69.0756, -306.762 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1455.36, 69.0756, -306.762 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point007" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1697.22, 131.25, -393.854 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1697.22, 131.25, -393.854 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point006" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1680.64, 128.58, -336.111 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1680.64, 128.58, -336.111 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point005" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1639.01, 143.079, -102.595 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1639.01, 143.079, -102.595 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point004" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1699.72, 152.693, -158.036 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1699.72, 152.693, -158.036 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Point003" type="OmniLight" parent="Lights"]
-transform = Transform( 100, 0, 0, 0, -4.37114e-006, 100, 0, -100, -4.37114e-006, 1650.24, 156.169, -147.447 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 1650.24, 156.169, -147.447 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
 omni_range = 25.0
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
 
 [node name="Sun" type="DirectionalLight" parent="Lights"]
-transform = Transform( 50, 1.61515e-005, -86.6025, 86.6025, 5.8762e-006, 50, 1.31647e-005, -100, -1.10495e-005, 1690.56, 604.873, -223.826 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
+transform = Transform( 50, 1.61515e-05, -86.6025, 86.6025, 5.8762e-06, 50, 1.31647e-05, -100, -1.10495e-05, 1690.56, 604.873, -223.826 )
 light_specular = 1.0
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.1
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
-directional_shadow_mode = 2
-directional_shadow_split_1 = 0.1
-directional_shadow_split_2 = 0.2
-directional_shadow_split_3 = 0.5
-directional_shadow_blend_splits = false
-directional_shadow_normal_bias = 0.8
-directional_shadow_bias_split_scale = 0.25
-directional_shadow_depth_range = 0
-directional_shadow_max_distance = 200.0
 
