@@ -1,24 +1,22 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://lightmaps/BigAtrium_bakedlightmapdata.res" type="BakedLightmapData" id=1]
-[ext_resource path="res://world_environments/StarrySky.tres" type="Environment" id=2]
-[ext_resource path="res://export/e.HexpaneWindow.tscn" type="PackedScene" id=3]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_1.mesh" type="ArrayMesh" id=4]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_2.mesh" type="ArrayMesh" id=5]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_3.mesh" type="ArrayMesh" id=6]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_4.mesh" type="ArrayMesh" id=7]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_5.mesh" type="ArrayMesh" id=8]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_6.mesh" type="ArrayMesh" id=9]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_7.mesh" type="ArrayMesh" id=10]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_8.mesh" type="ArrayMesh" id=11]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_9.mesh" type="ArrayMesh" id=12]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_10.mesh" type="ArrayMesh" id=13]
-[ext_resource path="res://export/meshes.collision/eBA_Plane002.shape" type="Shape" id=14]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_11.mesh" type="ArrayMesh" id=15]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_12.mesh" type="ArrayMesh" id=16]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_13.mesh" type="ArrayMesh" id=17]
-[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_14.mesh" type="ArrayMesh" id=18]
-
+[ext_resource path="res://export/e.HexpaneWindow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_1.mesh" type="ArrayMesh" id=3]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_2.mesh" type="ArrayMesh" id=4]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_3.mesh" type="ArrayMesh" id=5]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_4.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_5.mesh" type="ArrayMesh" id=7]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_6.mesh" type="ArrayMesh" id=8]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_7.mesh" type="ArrayMesh" id=9]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_8.mesh" type="ArrayMesh" id=10]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_9.mesh" type="ArrayMesh" id=11]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_10.mesh" type="ArrayMesh" id=12]
+[ext_resource path="res://export/meshes.collision/eBA_Plane002.shape" type="Shape" id=13]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_11.mesh" type="ArrayMesh" id=14]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_12.mesh" type="ArrayMesh" id=15]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_13.mesh" type="ArrayMesh" id=16]
+[ext_resource path="res://export/meshes/m_e_BigAtrium_escn_14.mesh" type="ArrayMesh" id=17]
 
 [node name="BigAtrium" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1676.84, -133.525, 185.014 )
@@ -34,42 +32,40 @@ light_data = ExtResource( 1 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.863356, 0.0784591, -0.498459, 0.5, -8.14603e-08, 0.866026, 0.0679476, -0.996917, -0.0392297, 1674.23, 180.498, -146.01 )
+visible = false
 light_color = Color( 1, 1, 0.980392, 1 )
 shadow_enabled = true
 directional_shadow_blend_splits = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 2 )
-
 [node name="HexpaneWindow007" type="Spatial" parent="."]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1701.04, 134.557, -216.556 )
 
-[node name="HexpaneWindow" parent="HexpaneWindow007" instance=ExtResource( 3 )]
+[node name="HexpaneWindow" parent="HexpaneWindow007" instance=ExtResource( 2 )]
 
 [node name="HexpaneWindow006" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1701.04, 142.299, -216.555 )
 
-[node name="HexpaneWindow" parent="HexpaneWindow006" instance=ExtResource( 3 )]
+[node name="HexpaneWindow" parent="HexpaneWindow006" instance=ExtResource( 2 )]
 
 [node name="HexpaneWindow005" type="Spatial" parent="."]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1653.03, 137.979, -216.537 )
 
-[node name="HexpaneWindow" parent="HexpaneWindow005" instance=ExtResource( 3 )]
+[node name="HexpaneWindow" parent="HexpaneWindow005" instance=ExtResource( 2 )]
 
 [node name="HexpaneWindow004" type="Spatial" parent="."]
 editor/display_folded = true
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1653.03, 145.717, -216.537 )
 
-[node name="HexpaneWindow" parent="HexpaneWindow004" instance=ExtResource( 3 )]
+[node name="HexpaneWindow" parent="HexpaneWindow004" instance=ExtResource( 2 )]
 
 [node name="BigAtriumWalls002" type="MeshInstance" parent="." groups=[
-"exterior",
 "walls",
+"exterior",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1674.23, 130.498, -146.01 )
 use_in_baked_light = true
-mesh = ExtResource( 4 )
+mesh = ExtResource( 3 )
 material/0 = null
 
 [node name="OmniLight" type="OmniLight" parent="BigAtriumWalls002"]
@@ -87,7 +83,7 @@ shadow_enabled = true
 [node name="RadBlindBeam004" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1698.21, 151.229, -127.88 )
 use_in_baked_light = true
-mesh = ExtResource( 5 )
+mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="RadBlindBeam003" type="MeshInstance" parent="." groups=[
@@ -95,39 +91,39 @@ material/0 = null
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.5, 1698.21, 110.569, -127.88 )
 use_in_baked_light = true
-mesh = ExtResource( 6 )
+mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="EarthViewBox3000" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1702.09, 145.559, -232.527 )
-mesh = ExtResource( 7 )
+mesh = ExtResource( 6 )
 material/0 = null
 material/1 = null
 
 [node name="EarthViewBox2000" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1654.14, 149.007, -232.512 )
-mesh = ExtResource( 8 )
+mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="GlazingBigAtriumEast000" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1698.21, 110.596, -127.918 )
-mesh = ExtResource( 9 )
+mesh = ExtResource( 8 )
 material/0 = null
 
 [node name="Cube001" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1716.42, 149.82, -176.221 )
-mesh = ExtResource( 10 )
+mesh = ExtResource( 9 )
 material/0 = null
 
 [node name="GlazingBigAtriumWest000" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1650.27, 114.085, -128.301 )
-mesh = ExtResource( 11 )
+mesh = ExtResource( 10 )
 material/0 = null
 
 [node name="Cube000" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1668.49, 153.299, -176.221 )
 use_in_baked_light = true
-mesh = ExtResource( 12 )
+mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="Plane002" type="MeshInstance" parent="." groups=[
@@ -137,7 +133,7 @@ material/0 = null
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1674.23, 106.604, -175.538 )
 use_in_baked_light = true
-mesh = ExtResource( 13 )
+mesh = ExtResource( 12 )
 material/0 = null
 material/1 = null
 
@@ -145,7 +141,7 @@ material/1 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Plane002/StaticBody"]
 visible = false
-shape = ExtResource( 14 )
+shape = ExtResource( 13 )
 
 [node name="CentreLightsTop" type="OmniLight" parent="Plane002"]
 editor/display_folded = true
@@ -1164,13 +1160,13 @@ shadow_enabled = true
 "cs_convex",
 ]]
 transform = Transform( 1, 0, 0, 0, 0.865385, 0, 0, 0, 1, 1665.93, 126.066, -174.629 )
-mesh = ExtResource( 15 )
+mesh = ExtResource( 14 )
 material/0 = null
 
 [node name="Passage-Mouth-South-BigAtrium-FirstGalley" type="MeshInstance" parent="."]
 transform = Transform( 0.993099, 0.117277, 5.12634e-09, 0, 4.37114e-08, -1, 0.117277, -0.993099, -4.34097e-08, 1664.18, 123.708, -223.989 )
 use_in_baked_light = true
-mesh = ExtResource( 16 )
+mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="BigAtrium001" type="Spatial" parent="."]
@@ -1178,12 +1174,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1662.86, 123.266, -223.941 )
 
 [node name="BigAtriumWalls000" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1649.78, 134.513, -246.382 )
-mesh = ExtResource( 17 )
+mesh = ExtResource( 16 )
 material/0 = null
 
 [node name="BigAtriumCenterBeam001" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1674.26, 149.568, -135.444 )
 use_in_baked_light = true
-mesh = ExtResource( 18 )
+mesh = ExtResource( 17 )
 material/0 = null
 

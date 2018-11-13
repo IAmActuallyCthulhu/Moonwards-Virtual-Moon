@@ -1,7 +1,7 @@
 [gd_scene load_steps=165 format=2]
 
 [ext_resource path="res://world_environments/StarrySky.tres" type="Environment" id=1]
-[ext_resource path="res://export/e.AtriumHabs_bakedLightmap.res" type="BakedLightmapData" id=2]
+[ext_resource path="res://lightmaps/AtriumHabs_bakedLightmap.res" type="BakedLightmapData" id=2]
 [ext_resource path="res://export/e.LightTube-Straight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_1.mesh" type="ArrayMesh" id=4]
 [ext_resource path="res://export/e.BoatRadiator.tscn" type="PackedScene" id=5]
@@ -164,6 +164,7 @@
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_157.mesh" type="ArrayMesh" id=162]
 [ext_resource path="res://export/meshes/m_e_AtriumHabs_escn_158.mesh" type="ArrayMesh" id=163]
 [ext_resource path="res://export/e.AtriumHab-PlanterSet.tscn" type="PackedScene" id=164]
+
 
 
 [node name="AtriumHabs" type="Spatial"]
