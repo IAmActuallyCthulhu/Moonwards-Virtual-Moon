@@ -19,7 +19,7 @@ export(bool) var FPSCamera = true
 export(bool) var thRDPersCamera = false
 var flies = false
 var translationcamera
-
+var ActionArea = false
 
 var ismoving = false
 var up
@@ -67,7 +67,8 @@ func adjust_facing(p_facing, p_target, p_step, p_adjust_rate, current_gn):
 	return (n*cos(ang) + t*sin(ang))*p_facing.length()
 
 func _input(event):
-	
+	if Input.is_action_pressed("ui_page_up") and ActionArea:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if (Input.is_action_pressed("run")):
 		if not flies: 
 			max_speed=RUNSPEED
@@ -86,7 +87,8 @@ func _input(event):
 	
 func _physics_process(delta):
 #Changes acceleration and max speed.
-	
+	#if not ActionArea:
+	#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	var v_speed 
 
 	if not flies:
@@ -280,5 +282,5 @@ func _physics_process(delta):
 func _ready():
 	CHAR_SCALE = scale
 	set_process_input(true)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
