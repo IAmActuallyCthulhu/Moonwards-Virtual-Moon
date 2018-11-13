@@ -1,6 +1,6 @@
 extends Control
 
-
+export(NodePath) var source_xyz = "Camera"
 
 
 func _process(delta):
@@ -9,8 +9,10 @@ func _process(delta):
 	$Vertices.text = str(Performance.get_monitor(Performance.RENDER_VERTICES_IN_FRAME))
 	$VRAM.text = str(Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED))
 	
-	if get_parent() is Camera:
-		var ORIGIN = get_parent().to_global(get_parent().transform.origin)
+	var xyz = self.get_node(source_xyz)
+#	var ORIGIN = xyz.to_global(xyz.transform.origin)
+	if xyz :
+		var ORIGIN = xyz.translation
 		$x.text = str(ORIGIN.x)
 		$y.text = str(ORIGIN.y)
 		$z.text = str(ORIGIN.z)
