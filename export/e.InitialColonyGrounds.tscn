@@ -171,6 +171,7 @@ mesh = ExtResource( 11 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
+_sections_unfolded = [ "mesh" ]
 
 [node name="StaticBody" type="StaticBody" parent="InitialColonyGrounds001"]
 input_ray_pickable = true
@@ -199,6 +200,7 @@ mesh = ExtResource( 13 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
+_sections_unfolded = [ "material", "mesh" ]
 
 [node name="StaticBody" type="StaticBody" parent="InitialColonyGrounds"]
 input_ray_pickable = true

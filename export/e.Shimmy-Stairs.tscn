@@ -1,20 +1,41 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://export/meshes/m_e_Shimmy-Stairs_escn_1.mesh" type="ArrayMesh" id=1]
-[ext_resource path="res://export/meshes/m_e_Shimmy-Stairs_escn_2.mesh" type="ArrayMesh" id=2]
+[ext_resource path="res://export/materials/Metal-Aluminum.tres" type="Material" id=2]
+[ext_resource path="res://export/meshes/m_e_Shimmy-Stairs_escn_2.mesh" type="ArrayMesh" id=3]
 
-[node type="Spatial" name="Shimmy-Stairs"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -1672.9, -150.41, 43.9941)
+[node name="Shimmy-Stairs" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1672.9, -150.41, 43.9941 )
 
 [node name="ShimmyStair-Pole001" type="MeshInstance" parent="."]
-
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1672.65, 149.709, -44.018 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
-visible = true
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1672.65, 149.709, -44.0181)
+skeleton = NodePath("..")
+material/0 = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "material", "mesh" ]
 
 [node name="ShimmyStair-Rail001" type="MeshInstance" parent="."]
+transform = Transform( 7.54979e-08, 4.37114e-08, 1, 1, -3.30012e-15, -7.54979e-08, 0, 1, -4.37114e-08, 1673.16, 151.111, -43.97 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform", "material" ]
 
-mesh = ExtResource( 2 )
-visible = true
-transform = Transform(7.54979e-08, 4.37114e-08, 1.0, 1.0, -3.30012e-15, -7.54979e-08, 0.0, 1.0, -4.37114e-08, 1673.16, 151.111, -43.9701)
