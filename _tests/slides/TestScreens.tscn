@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://_tests/slides/ScreenViewer.tscn" type="PackedScene" id=1]
-[ext_resource path="res://_tests/slides/Basic.tscn" type="PackedScene" id=2]
+[ext_resource path="res://_tests/slides/Example.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/GreenMan/blueman.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CubeMesh" id=1]
