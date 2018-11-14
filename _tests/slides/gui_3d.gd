@@ -1,10 +1,14 @@
 tool
 extends Spatial
-var viewport = null
+
+# Member variables
 var prev_pos = null
 var last_click_pos = null
+var viewport = null
+export(PackedScene) var Content = null
+export(Vector2) var Size = Vector2(1024,700)
+export(bool) var Hologram = false
 
-	
 func _input(event):
 	# Check if the event is a non-mouse event
 	var is_mouse_event = false
@@ -17,30 +21,11 @@ func _input(event):
 	# If it is, then pass the event to the viewport
 	if (is_mouse_event == false):
 		viewport.input(event)
-		
 
 
-	
-func _ready():
-	# Get the viewport and clear it
-	#get_node("Area").connect("input_event", self, "_on_area_input_event")
-	viewport = $Viewport
-	viewport.set_clear_mode(Viewport.CLEAR_MODE_ONLY_NEXT_FRAME)
-	
-	viewport.usage = Viewport.USAGE_2D_NO_SAMPLING
-	viewport.render_target_v_flip = true
-	
-	yield(get_tree(), "idle_frame")
-	yield(get_tree(), "idle_frame")
-
-	# Retrieve the texture and set it to the viewport quad
-	$Area/MeshInstance2.material_override.albedo_texture = viewport.get_texture()
-	#$Area/MeshInstance2.material_override.emission_texture = viewport.get_texture()
-
-
-func _on_Area_input_event(camera, event, click_pos, click_normal, shape_idx):
+# Mouse events for Area
+func _on_area_input_event(camera, event, click_pos, click_normal, shape_idx):
 	# Use click pos (click in 3d space, convert to area space)
-	print("Click!")
 	var pos = get_node("Area").get_global_transform().affine_inverse()
 	# the click pos is not zero, then use it to convert from 3D space to area space
 	if (click_pos.x != 0 or click_pos.y != 0 or click_pos.z != 0):
@@ -80,3 +65,16 @@ func _on_Area_input_event(camera, event, click_pos, click_normal, shape_idx):
 	
 	# Send the event to the viewport
 	viewport.input(event)
+
+
+func _ready():
+	viewport = get_node("Viewport")
+	viewport.size = Size
+	viewport.add_child(Content.instance())
+	get_node("Area").connect("input_event", self, "_on_area_input_event")
+	if Hologram:
+		var mat = $Area/Quad.get_surface_material(0)
+		mat.albedo_color.a = 0.7
+		mat.flags_transparent = true
+		$Area/Quad.set_surface_material(0, mat)
+  

@@ -180,7 +180,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-source_xyz = "Camera"
+source_xyz = NodePath("..")
 
 [node name="Target" type="Position3D" parent="Pivot/FPSCamera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.937118 )
