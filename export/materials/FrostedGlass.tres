@@ -3,7 +3,7 @@
 [resource]
 
 render_priority = 0
-flags_transparent = true
+flags_transparent = false
 flags_unshaded = false
 flags_vertex_lighting = false
 flags_no_depth_test = false
@@ -27,11 +27,11 @@ params_billboard_mode = 0
 params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 1, 1, 1, 0.509804 )
+albedo_color = Color( 1, 1, 1, 0.219608 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
-roughness = 0.5
+roughness = 1.0
 roughness_texture_channel = 0
 emission_enabled = false
 normal_enabled = false
@@ -42,7 +42,7 @@ ao_enabled = false
 depth_enabled = false
 subsurf_scatter_enabled = false
 transmission_enabled = true
-transmission = Color( 0.129412, 0.129412, 0.129412, 1 )
+transmission = Color( 0.721569, 0.721569, 0.721569, 1 )
 refraction_enabled = false
 detail_enabled = false
 uv1_scale = Vector3( 1, 1, 1 )
@@ -55,5 +55,5 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_mode = 0
-_sections_unfolded = [ "Albedo", "Distance Fade", "Flags", "Proximity Fade", "Roughness", "Transmission" ]
+_sections_unfolded = [ "Albedo", "Transmission" ]
 
