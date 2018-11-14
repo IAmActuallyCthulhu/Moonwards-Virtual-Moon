@@ -10,9 +10,9 @@ func _process(delta):
 	$VRAM.text = str(Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED))
 	
 	var xyz = self.get_node(source_xyz)
-#	var ORIGIN = xyz.to_global(xyz.transform.origin)
+	var ORIGIN = xyz.to_global(xyz.transform.origin)
 	if xyz :
-		var ORIGIN = xyz.translation
+		#var ORIGIN = xyz.translation
 		$x.text = str(ORIGIN.x)
 		$y.text = str(ORIGIN.y)
 		$z.text = str(ORIGIN.z)

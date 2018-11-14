@@ -20,21 +20,26 @@ subdivide_depth = 0
 margin = 0.04
 extents = Vector3( 1, 1, 1 )
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=3]
 
 margin = 0.04
 extents = Vector3( 1, 0.864863, 0.793616 )
 
-[sub_resource type="World" id=3]
+[sub_resource type="World" id=4]
 
 
-[sub_resource type="ViewportTexture" id=4]
+[sub_resource type="BoxShape" id=8]
+
+margin = 0.04
+extents = Vector3( 1, 1, 0.0616858 )
+
+[sub_resource type="ViewportTexture" id=5]
 
 resource_local_to_scene = true
 flags = 4
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=6]
 
 resource_local_to_scene = true
 render_priority = 0
@@ -63,7 +68,7 @@ params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
-albedo_texture = SubResource( 4 )
+albedo_texture = SubResource( 5 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
@@ -97,21 +102,17 @@ proximity_fade_enable = false
 distance_fade_mode = 0
 _sections_unfolded = [ "UV1" ]
 
-[sub_resource type="QuadMesh" id=6]
+[sub_resource type="QuadMesh" id=7]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 flip_faces = false
 size = Vector2( 2, 2 )
 
-[sub_resource type="BoxShape" id=7]
-
-margin = 0.04
-extents = Vector3( 1, 1, 0.0157345 )
-
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+editor/display_folded = true
 transform = Transform( 10.056, 0, 0, 0, 0.124542, 0, 0, 0, 19.0838, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -144,6 +145,15 @@ accel = 40.0
 WALKSPEED = 4.0
 RUNSPEED = 9.0
 
+[node name="Lamp" parent="KinematicBody" index="0"]
+light_cull_mask = -1
+
+[node name="FPSCamera" parent="KinematicBody/Pivot" index="0"]
+current = false
+
+[node name="Control" parent="KinematicBody/Pivot/FPSCamera" index="0"]
+source_xyz = NodePath("..")
+
 [node name="Area2" type="Area" parent="."]
 transform = Transform( 1.55, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35301, 4.59454 )
 input_ray_pickable = false
@@ -170,14 +180,15 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.924945 )
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 disabled = false
 
 [node name="Viewport" type="Viewport" parent="."]
+editor/display_folded = true
 arvr = false
 size = Vector2( 1024, 700 )
 own_world = false
-world = SubResource( 3 )
+world = SubResource( 4 )
 transparent_bg = false
 msaa = 0
 hdr = true
@@ -225,9 +236,14 @@ reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 _sections_unfolded = [ "Matrix", "Transform", "Visibility" ]
 
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 8 )
+disabled = false
+_sections_unfolded = [ "Transform", "shape" ]
+
 [node name="MeshInstance2" type="MeshInstance" parent="Area"]
 layers = 1
-material_override = SubResource( 5 )
+material_override = SubResource( 6 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = false
@@ -235,17 +251,30 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 skeleton = NodePath("..")
 material/0 = null
-_sections_unfolded = [ "Geometry" ]
+_sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-shape = SubResource( 7 )
-disabled = false
-_sections_unfolded = [ "shape" ]
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.929831, 2.56758 )
+keep_aspect = 1
+cull_mask = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+doppler_tracking = 0
+projection = 0
+current = true
+fov = 70.0
+size = 1.0
+near = 0.05
+far = 100.0
 
 [connection signal="body_entered" from="Area2" to="Area2" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area2" to="Area2" method="_on_Area_body_exited"]
+[connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]
+
+[editable path="KinematicBody"]
 
 [editable path="Viewport/Control"]

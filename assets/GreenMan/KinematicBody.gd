@@ -12,7 +12,7 @@ export(float) var accel = 19.0
 export(float) var deaccel = 14.0
 export(float) var sharp_turn_threshold = 140
 export(float) var JumpHeight = 1.5
-
+var Captured = true
 
 export(bool) var AllowChangeCamera = false
 export(bool) var FPSCamera = true
@@ -67,8 +67,17 @@ func adjust_facing(p_facing, p_target, p_step, p_adjust_rate, current_gn):
 	return (n*cos(ang) + t*sin(ang))*p_facing.length()
 
 func _input(event):
-	if Input.is_action_pressed("ui_page_up") and ActionArea:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	########################### MUST BE CHANGED TO RAYCAST
+	if Input.is_action_pressed("ui_page_up"):
+		if Captured:
+			Captured = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Captured = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			#############################
+			
+			
 	if (Input.is_action_pressed("run")):
 		if not flies: 
 			max_speed=RUNSPEED
@@ -145,8 +154,8 @@ func _physics_process(delta):
 	if flies:
 		vertical_velocity += dir.y
 
-	var jump_attempt = Input.is_action_pressed("jump") or Input.is_action_pressed("ui_page_up")
-	var crouch_attempt = Input.is_action_pressed("ui_mlook") or Input.is_action_pressed("ui_page_down")
+	var jump_attempt = Input.is_action_pressed("jump") or (Input.is_action_pressed("ui_page_up") and flies)
+	var crouch_attempt = Input.is_action_pressed("ui_mlook") or (Input.is_action_pressed("ui_page_down") and flies)
 	
 	
 #END OF THE BLOCK
@@ -282,5 +291,5 @@ func _physics_process(delta):
 func _ready():
 	CHAR_SCALE = scale
 	set_process_input(true)
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
