@@ -6,7 +6,6 @@
 [sub_resource type="PlaneMesh" id=1]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-flip_faces = false
 size = Vector2( 2, 2 )
 subdivide_width = 0
 subdivide_depth = 0
@@ -14,7 +13,7 @@ subdivide_depth = 0
 [sub_resource type="ViewportTexture" id=2]
 
 resource_local_to_scene = true
-flags = 5
+flags = 0
 viewport_path = NodePath("Viewport")
 
 [sub_resource type="SpatialMaterial" id=3]
@@ -29,9 +28,6 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = true
-flags_do_not_receive_shadows = false
-flags_disable_ambient_light = false
-flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -42,7 +38,6 @@ params_depth_draw_mode = 3
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
-params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 1, 1, 1, 1 )
@@ -77,7 +72,7 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = true
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_mode = 0
+distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Emission", "Flags", "Parameters", "UV2", "emission_texture" ]
 
 [sub_resource type="GDScript" id=4]
@@ -90,26 +85,26 @@ func e():
 
 [sub_resource type="BoxShape" id=5]
 
-margin = 0.04
 extents = Vector3( 1, 1, 0.01 )
 script = SubResource( 4 )
 
-[node name="Screen" type="Spatial"]
+[node name="Screen" type="Spatial" index="0"]
+
 script = ExtResource( 1 )
 Content = null
 Size = Vector2( 1024, 700 )
 Hologram = false
 
-[node name="Viewport" type="Viewport" parent="."]
+[node name="Viewport" type="Viewport" parent="." index="0"]
+
 arvr = false
-size = Vector2( 180, 180 )
+size = Vector2( 1024, 700 )
 own_world = false
 world = null
 transparent_bg = true
 msaa = 0
 hdr = false
 disable_3d = false
-keep_3d_linear = false
 usage = 0
 debug_draw = 0
 render_target_v_flip = true
@@ -127,7 +122,8 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 _sections_unfolded = [ "Render Target", "Rendering" ]
 
-[node name="Area" type="Area" parent="."]
+[node name="Area" type="Area" parent="." index="1"]
+
 input_ray_pickable = true
 input_capture_on_drag = true
 space_override = 0
@@ -150,7 +146,8 @@ reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="Quad" type="MeshInstance" parent="Area"]
+[node name="Quad" type="MeshInstance" parent="Area" index="0"]
+
 transform = Transform( -1, 8.74228e-008, -4.37114e-008, -4.37114e-008, 1.91069e-015, 1, 8.74228e-008, 1, 1.91069e-015, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -166,7 +163,9 @@ skeleton = NodePath("..")
 material/0 = SubResource( 3 )
 _sections_unfolded = [ "Geometry", "Transform", "material" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="1"]
+
 shape = SubResource( 5 )
 disabled = false
+
 
