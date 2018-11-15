@@ -12,7 +12,7 @@ func _process(delta):
 	var xyz = self.get_node(source_xyz)
 	
 	if xyz :
-		var ORIGIN = xyz.translation
+		var ORIGIN = xyz.to_global(xyz.transform.origin) #Don't change this line or the coordinates won't work if camera is child of moving object (player)
 		$Panel/x.text = str(ORIGIN.x)
 		$Panel/y.text = str(ORIGIN.y)
 		$Panel/z.text = str(ORIGIN.z)
