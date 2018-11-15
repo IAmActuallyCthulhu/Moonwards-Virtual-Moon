@@ -5,7 +5,6 @@
 [sub_resource type="CubeMesh" id=1]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-flip_faces = false
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
@@ -13,12 +12,12 @@ subdivide_depth = 0
 
 [sub_resource type="BoxShape" id=2]
 
-margin = 0.04
 extents = Vector3( 1, 1, 1 )
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Spatial" index="0"]
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
+
 transform = Transform( 10.056, 0, 0, 0, 0.124542, 0, 0, 0, 19.0838, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -34,21 +33,33 @@ skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "material" ]
 
-[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+[node name="StaticBody" type="StaticBody" parent="MeshInstance" index="0"]
+
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
+friction = 1.0
+bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody" index="0"]
+
 shape = SubResource( 2 )
 disabled = false
 
-[node name="KinematicBody" parent="." instance=ExtResource( 1 )]
+[node name="KinematicBody" parent="." index="1" instance=ExtResource( 1 )]
+
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24297, 1.69375, -1.1203 )
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
 accel = 40.0
 WALKSPEED = 4.0
 RUNSPEED = 9.0
+
 

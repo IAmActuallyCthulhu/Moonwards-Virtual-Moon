@@ -31,9 +31,6 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
-flags_do_not_receive_shadows = false
-flags_disable_ambient_light = false
-flags_ensure_correct_normals = false
 vertex_color_use_as_albedo = false
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
@@ -44,7 +41,6 @@ params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
 params_billboard_mode = 0
-params_billboard_keep_scale = false
 params_grow = false
 params_use_alpha_scissor = false
 albedo_color = Color( 0.654902, 0.129412, 0.129412, 1 )
@@ -74,7 +70,7 @@ uv2_offset = Vector3( 0, 0, 0 )
 uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
-distance_fade_mode = 0
+distance_fade_enable = false
 
 [sub_resource type="CanvasItemMaterial" id=4]
 
@@ -92,13 +88,12 @@ light_mode = 0
 [sub_resource type="DynamicFont" id=6]
 
 size = 60
-outline_size = 0
-outline_color = Color( 1, 1, 1, 1 )
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 8 )
 
 [node name="Spatial" type="Control"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -118,7 +113,8 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -136,7 +132,8 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
 
-[node name="ui" type="Control" parent="."]
+[node name="ui" type="Control" parent="." index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -150,7 +147,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="main" type="Control" parent="ui"]
+[node name="main" type="Control" parent="ui" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -164,7 +162,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="pHelp" type="Panel" parent="ui/main"]
+[node name="pHelp" type="Panel" parent="ui/main" index="0"]
+
 visible = false
 self_modulate = Color( 1, 1, 1, 0.588235 )
 material = SubResource( 1 )
@@ -183,7 +182,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ui/main/pHelp"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ui/main/pHelp" index="0"]
+
 self_modulate = Color( 0.929412, 0.862745, 0.862745, 1 )
 material = SubResource( 4 )
 anchor_left = 0.0
@@ -247,7 +247,8 @@ scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 
-[node name="Panel" type="Panel" parent="ui/main"]
+[node name="Panel" type="Panel" parent="ui/main" index="1"]
+
 material = SubResource( 5 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -264,7 +265,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Run" type="Button" parent="ui/main/Panel"]
+[node name="Run" type="Button" parent="ui/main/Panel" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -286,7 +288,8 @@ text = "Run"
 flat = false
 align = 1
 
-[node name="Options" type="Button" parent="ui/main/Panel"]
+[node name="Options" type="Button" parent="ui/main/Panel" index="1"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -310,7 +313,8 @@ text = "Options"
 flat = false
 align = 1
 
-[node name="Help" type="Button" parent="ui/main/Panel"]
+[node name="Help" type="Button" parent="ui/main/Panel" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -332,7 +336,8 @@ text = "Help"
 flat = false
 align = 1
 
-[node name="Display" type="Button" parent="ui/main/Panel"]
+[node name="Display" type="Button" parent="ui/main/Panel" index="3"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -355,7 +360,8 @@ text = "Display"
 flat = false
 align = 1
 
-[node name="loading" type="Control" parent="ui"]
+[node name="loading" type="Control" parent="ui" index="1"]
+
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -370,7 +376,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="ui/loading"]
+[node name="Label" type="Label" parent="ui/loading" index="0"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -391,12 +398,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="load_timer" type="Timer" parent="."]
+[node name="load_timer" type="Timer" parent="." index="2"]
+
 process_mode = 1
 wait_time = 0.2
 one_shot = false
 autostart = false
 
 [connection signal="pressed" from="ui/main/Panel/Run" to="." method="_on_Run_pressed"]
+
 [connection signal="pressed" from="ui/main/Panel/Help" to="." method="_on_Help_pressed"]
+
 [connection signal="timeout" from="load_timer" to="." method="_on_Timer_timeout"]
+
+
