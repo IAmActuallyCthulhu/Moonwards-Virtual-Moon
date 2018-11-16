@@ -1,5 +1,8 @@
 extends Spatial
 
+export(NodePath) var RootNode
+export(String) var show = "interior"
+export(String) var hide = "interior"
 
 
 func _on_Area_area_entered(area):
