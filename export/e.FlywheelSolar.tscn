@@ -1,648 +1,408 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource id=1 path="e.Flywheel-Tower-Simple.tscn" type="PackedScene"]
-[ext_resource id=2 path="e.SolarPanelUnit.tscn" type="PackedScene"]
+[ext_resource path="res://export/e.Flywheel-Tower-Simple.tscn" type="PackedScene" id=1]
+[ext_resource path="res://export/e.SolarPanelUnit.tscn" type="PackedScene" id=2]
 
-[node type="Spatial" name="FlywheelSolar"]
-
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -2210.66, -160.168, 561.586)
+[node name="FlywheelSolar" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2210.66, -160.168, 561.586 )
 
 [node name="Flywheel-Tower-Simple001" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 89.3865, 57.1818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 89.3865, 57.1818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple001" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple001" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple002" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 87.9085, 57.1818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 87.9085, 57.1818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple002" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple002" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple003" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 92.3467, 8.98159 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 92.3467, 8.98159)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple003" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple003" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple004" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 90.7749, 8.98159 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 90.7749, 8.98159)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple004" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple004" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple005" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 95.5093, -39.2184 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 95.5093, -39.2184)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple005" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple005" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple006" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 93.8394, -39.2184 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 93.8394, -39.2184)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple006" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple006" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple007" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 99.3872, -87.4183 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 99.3872, -87.4183)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple007" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple007" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple008" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 97.6448, -87.4183 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 97.6448, -87.4183)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple008" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple008" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple009" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 104.244, -135.618 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 104.244, -135.618)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple009" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple009" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple010" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 102.492, -135.618 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 102.492, -135.618)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple010" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple010" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple011" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 109.975, -183.818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 109.975, -183.818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple011" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple011" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple012" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 108.291, -183.818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 108.291, -183.818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple012" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple012" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple013" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 116.223, -232.018 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 116.223, -232.018)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple013" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple013" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple014" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 114.61, -232.018 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 114.61, -232.018)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple014" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple014" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple015" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 122.51, -280.218 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 122.51, -280.218)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple015" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple015" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple016" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 121.007, -280.218 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 121.007, -280.218)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple016" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple016" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple017" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 128.767, -328.418 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 128.767, -328.418)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple017" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple017" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple018" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 127.422, -328.418 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 127.422, -328.418)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple018" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple018" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple019" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 135.109, -376.618 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 135.109, -376.618)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple019" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple019" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple020" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 133.909, -376.618 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 133.909, -376.618)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple020" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple020" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple054" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 209.425, -955.018 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 209.425, -955.018)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple054" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple054" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple053" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 238.961, -1196.02 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 238.961, -1196.02)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple053" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple053" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple052" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 238.645, -1196.02 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 238.645, -1196.02)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple052" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple052" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple051" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 231.401, -1147.82 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 231.401, -1147.82)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple051" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple051" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple050" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 231.085, -1147.82 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 231.085, -1147.82)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple050" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple050" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple049" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 224.663, -1099.62 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 224.663, -1099.62)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple049" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple049" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple048" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 224.333, -1099.62 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 224.333, -1099.62)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple048" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple048" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple047" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 218.969, -1051.42 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 218.969, -1051.42)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple047" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple047" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple046" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 218.608, -1051.42 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 218.608, -1051.42)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple046" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple046" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple045" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 214.066, -1003.22 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 214.066, -1003.22)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple045" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple045" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple044" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 213.685, -1003.22 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 213.685, -1003.22)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple044" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple044" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple043" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 209.018, -955.018 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 209.018, -955.018)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple043" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple043" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple042" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 204.299, -906.818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 204.299, -906.818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple042" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple042" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple041" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 203.869, -906.818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 203.869, -906.818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple041" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple041" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple040" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 198.391, -858.618 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 198.391, -858.618)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple040" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple040" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple039" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 197.978, -858.618 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 197.978, -858.618)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple039" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple039" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple038" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 192.111, -810.418 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 192.111, -810.418)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple038" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple038" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple037" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 191.779, -810.418 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 191.779, -810.418)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple037" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple037" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple036" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 185.933, -762.218 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 185.933, -762.218)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple036" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple036" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple035" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 185.724, -762.218 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 185.724, -762.218)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple035" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple035" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple034" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 180.056, -714.018 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 180.056, -714.018)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple034" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple034" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple033" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 180.008, -714.018 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 180.008, -714.018)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple033" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple033" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple032" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 174.364, -665.818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 174.364, -665.818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple032" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple032" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple031" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 174.415, -665.818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 174.415, -665.818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple031" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple031" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple030" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 168.473, -617.618 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 168.473, -617.618)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple030" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple030" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple029" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 168.65, -617.618 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 168.65, -617.618)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple029" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple029" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple028" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 162.042, -569.418 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 162.042, -569.418)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple028" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple028" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple027" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 162.465, -569.418 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 162.465, -569.418)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple027" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple027" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple026" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 155.091, -521.218 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 155.091, -521.218)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple026" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple026" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple025" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 155.686, -521.218 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 155.686, -521.218)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple025" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple025" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple024" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 147.828, -473.018 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 147.828, -473.018)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple024" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple024" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple023" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 148.6, -473.018 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 148.6, -473.018)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple023" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple023" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple022" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2215.01, 140.669, -424.818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2215.01, 140.669, -424.818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple022" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple022" instance=ExtResource( 1 )]
 
 [node name="Flywheel-Tower-Simple021" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2206.31, 141.619, -424.818 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2206.31, 141.619, -424.818)
-
-[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple021" instance=ExtResource ( 1 )]
-
-instance = ExtResource ( 1 )
+[node name="Flywheel-Tower-Simple" parent="Flywheel-Tower-Simple021" instance=ExtResource( 1 )]
 
 [node name="SolarPanelUnit" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 209.654, 45.1971 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 209.654, 45.1971)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit001" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 212.566, -3.00308 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 212.566, -3.00308)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit001" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit001" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit002" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 215.711, -51.203 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 215.711, -51.203)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit002" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit002" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit003" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 219.543, -99.403 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 219.543, -99.403)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit003" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit003" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit004" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 224.388, -147.603 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 224.388, -147.603)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit004" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit004" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit005" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 230.153, -195.803 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 230.153, -195.803)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit005" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit005" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit006" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 236.428, -244.003 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 236.428, -244.003)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit006" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit006" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit007" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 242.792, -292.203 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 242.792, -292.203)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit007" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit007" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit008" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 249.123, -340.403 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 249.123, -340.403)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit008" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit008" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit009" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 255.51, -388.603 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 255.51, -388.603)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit009" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit009" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit025" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 352.262, -1159.8 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 352.262, -1159.8)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit025" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit025" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit024" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 345.53, -1111.6 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 345.53, -1111.6)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit024" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit024" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit023" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 339.807, -1063.4 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 339.807, -1063.4)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit023" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit023" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit022" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 334.882, -1015.2 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 334.882, -1015.2)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit022" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit022" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit021" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 330.227, -967.003 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 330.227, -967.003)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit021" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit021" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit020" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 325.086, -918.803 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 325.086, -918.803)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit020" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit020" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit019" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 319.203, -870.603 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 319.203, -870.603)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit019" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit019" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit018" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 312.953, -822.403 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 312.953, -822.403)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit018" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit018" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit017" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 306.838, -774.203 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 306.838, -774.203)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit017" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit017" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit016" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 301.053, -726.003 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 301.053, -726.003)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit016" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit016" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit015" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 295.404, -677.803 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 295.404, -677.803)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit015" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit015" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit014" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 289.567, -629.603 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 289.567, -629.603)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit014" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit014" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit013" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 283.257, -581.403 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 283.257, -581.403)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit013" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit013" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit012" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 276.384, -533.203 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 276.384, -533.203)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit012" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit012" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit011" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 269.245, -485.003 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 269.245, -485.003)
-
-[node name="SolarPanelUnit" parent="SolarPanelUnit011" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
+[node name="SolarPanelUnit" parent="SolarPanelUnit011" instance=ExtResource( 2 )]
 
 [node name="SolarPanelUnit010" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2209.3, 262.196, -436.803 )
 
-transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 2209.3, 262.196, -436.803)
+[node name="SolarPanelUnit" parent="SolarPanelUnit010" instance=ExtResource( 2 )]
 
-[node name="SolarPanelUnit" parent="SolarPanelUnit010" instance=ExtResource ( 2 )]
-
-instance = ExtResource ( 2 )
