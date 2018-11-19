@@ -15,17 +15,17 @@ height = 3.0
 [sub_resource type="SphereShape" id=3]
 
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=4]
 
 albedo_color = Color( 0.305882, 0.380392, 0.678431, 1 )
 
-[sub_resource type="SphereMesh" id=4]
+[sub_resource type="SphereMesh" id=5]
 
-material = SubResource( 6 )
+material = SubResource( 4 )
 radius = 0.1
 height = 0.2
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=6]
 
 extents = Vector3( 5, 5, 5 )
 
@@ -61,41 +61,41 @@ transform = Transform( 0.834511, 0, 0.550991, 0, 1, 0, -0.550991, 0, 0.834511, 1
 
 [node name="MeshInstance3" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15 )
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="showhide" type="MeshInstance" parent="." groups=[
 "interior",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0382588, 0.796561, 3.54702 )
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="showhide2" type="MeshInstance" parent="showhide"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581672, 0, 0 )
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="hideshow" type="MeshInstance" parent="." groups=[
 "exterior",
 ]]
 transform = Transform( -0.00211362, -0.999998, 0, 0.999998, -0.00211362, 0, 0, 0, 1, -0.374116, 1.09122, 3.29677 )
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="hideshow2" type="MeshInstance" parent="hideshow"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.581672, 0, 0 )
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Area" type="Area" parent="."]
@@ -103,7 +103,5 @@ script = ExtResource( 2 )
 RootNode = NodePath("..")
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
-[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
-[connection signal="area_exited" from="Area" to="." method="_on_Area_area_exited"]

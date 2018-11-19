@@ -23,8 +23,11 @@ func obj_has_groups(obj, groups):
 
 func get_node_list(root, groups):
 	var match_obj = []
-	var objects = root.get_children()
-	objects.append(root)
+	var objects = []
+	if obj_has_groups(root, groups):
+		objects.append(root)
+	else:
+		objects = root.get_children()
 	while objects.size():
 		var obj = objects.pop_front()
 		if obj.get_child_count():
@@ -55,6 +58,8 @@ func _on_Area_area_entered(area):
 
 func _on_Area_area_exited(area):
 	print("exit")
+	print("node_sh ", nodes_sh)
+	print("node_hs ", nodes_hs)
 	for obj in nodes_sh:
 		obj.visible = false
 	for obj in nodes_hs:
