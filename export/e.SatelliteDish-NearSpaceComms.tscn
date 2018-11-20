@@ -2,7 +2,7 @@
 
 [ext_resource path="res://export/meshes/m_e_SatelliteDish-NearSpaceComms_escn_1.mesh" type="ArrayMesh" id=1]
 
-[sub_resource type="CylinderShape" id=1]
+[sub_resource type="CapsuleShape" id=1]
 
 margin = 0.04
 radius = 0.748272

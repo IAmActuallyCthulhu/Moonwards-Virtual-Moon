@@ -6,31 +6,39 @@
 [ext_resource path="res://export/meshes/m_e_Stirling-FreePiston_escn_2.mesh" type="ArrayMesh" id=4]
 [ext_resource path="res://export/meshes/m_e_Stirling-FreePiston_escn_3.mesh" type="ArrayMesh" id=5]
 
-[node name="Stirling-FreePiston" type="Spatial"]
+[node name="Stirling-FreePiston" type="Spatial" index="0"]
+
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.90858, -6.45135, -7.7197 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="StaticBody" type="StaticBody" parent="." index="0"]
+
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
+friction = 1.0
+bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 1.30913, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.30913, 0, 0 )
 shape = ExtResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
-transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, -2.39105, -0.423321, 0 )
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody" index="1"]
+
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.39105, -0.423321, 0 )
 shape = ExtResource( 2 )
 disabled = false
 _sections_unfolded = [ "shape" ]
 
-[node name="StirlingFrame" type="MeshInstance" parent="."]
-transform = Transform( 7.54979e-008, 1, 0, -1, 7.54979e-008, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
+[node name="StirlingFrame" type="MeshInstance" parent="." index="1"]
+
+transform = Transform( 7.54979e-08, 1, 0, -1, 7.54979e-08, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -44,8 +52,9 @@ mesh = ExtResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="StirlingFrameBraces" type="MeshInstance" parent="."]
-transform = Transform( 7.54979e-008, 1, 0, -1, 7.54979e-008, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
+[node name="StirlingFrameBraces" type="MeshInstance" parent="." index="2"]
+
+transform = Transform( 7.54979e-08, 1, 0, -1, 7.54979e-08, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -59,7 +68,8 @@ mesh = ExtResource( 4 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="Stirling-FreePIston-Single" type="MeshInstance" parent="."]
+[node name="Stirling-FreePIston-Single" type="MeshInstance" parent="." index="3"]
+
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90858, 6.45135, 7.7197 )
 layers = 1
 material_override = null
@@ -73,4 +83,5 @@ lod_max_hysteresis = 0.0
 mesh = ExtResource( 5 )
 skeleton = NodePath("..")
 material/0 = null
+
 

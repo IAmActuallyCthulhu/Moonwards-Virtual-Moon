@@ -1,4 +1,4 @@
-[gd_resource type="CylinderShape" format=2]
+[gd_resource type="CapsuleShape" format=2]
 
 [resource]
 
