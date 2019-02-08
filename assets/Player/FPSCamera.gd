@@ -12,6 +12,7 @@ var time = 0.0
 var Znoice = 0.0
 var Zholder = 0.0
 var v_off = 0.0
+var target
 
 var noinput = false
 
@@ -54,6 +55,7 @@ func _input(ev):
 		get_parent().rotation_degrees.y = yaw
 
 func _process(delta):
+	lerp(translation, get_node(target), 1)
 	time += delta
 	bobbing_effect(time, get_parent().get_parent().hspeed, delta)
 	

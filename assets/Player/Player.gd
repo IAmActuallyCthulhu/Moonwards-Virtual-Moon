@@ -20,10 +20,11 @@ export(bool) var thRDPersCamera = false
 var flies = false
 var translationcamera
 var ActionArea = false
-
+var initialized = false
 var ismoving = false
 var up
-
+var FPS_camera_node
+var TRP_camera_node
 #State
 var input_processing = true setget set_player_input
 var nocamera = false setget set_player_nocamera
@@ -55,13 +56,14 @@ slave var slave_linear_vel
 
 #disable camera view for the player
 func set_player_nocamera(state):
-	nocamera = state
-	if nocamera :
-		get_node("Pivot").visible = false
-		get_node("Pivot/FPSCamera").clear_current()
-	else:
-		get_node("Pivot").visible = true
-		get_node("Pivot/FPSCamera").make_current()
+	if initialized:
+		nocamera = state
+		if nocamera :
+			get_node("Pivot").visible = false
+			FPS_camera_node.clear_current()
+		else:
+			get_node("Pivot").visible = true
+			FPS_camera_node.make_current()
 
 #Rotates the model to where the camera points
 func adjust_facing(p_facing, p_target, p_step, p_adjust_rate, current_gn):
@@ -102,8 +104,15 @@ func set_player_input(enable):
 
 func _input(event):
 	########################### MUST BE CHANGED TO RAYCAST
-	#Raycast WIP
-	#get_viewport().get_camera().project_ray_origin(Vector2(0,0))
+	if initialized:
+		var Raycast = FPS_camera_node.get_node("RayCast")
+		var collider = Raycast.get_collider()
+		var click_position = Raycast.get_collision_point()
+		var click_normal = Raycast.get_collision_normal()
+		
+		if Raycast.is_colliding():
+			collider._input_event (get_viewport().get_camera(), event, click_position, click_normal, 0 )
+		
 	if Input.is_action_pressed("player_toggleinput"):
 		input_processing = !input_processing
 		set_player_input(input_processing)
@@ -138,7 +147,7 @@ func _input(event):
 		else:
 			flies = true
 	
-func _process(delta):
+func _physics_process(delta):
 #Changes acceleration and max speed.
 	#if not ActionArea:
 	#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -158,13 +167,13 @@ func _process(delta):
 
 #Movement
 	var dir = Vector3() # Where does the player intend to walk to
-
-	var AbsView = ($Pivot/FPSCamera/Target.get_global_transform().origin-$Pivot/FPSCamera.get_global_transform().origin).normalized() 
+	if initialized:
+		var AbsView = (get_tree().get_root().get_node("Camera_FPS/Target").get_global_transform().origin-$Pivot/FPSCamera.get_global_transform().origin).normalized() 
 	#This is the global vector for the player to move while flying
 	
 #THIS BLOCK IS INTENDED FOR FPS CONTROLLER USE ONLY
 	var aim = $Pivot/FPSCamera.get_global_transform().basis
-	if is_network_master():
+	if is_network_master() or not get_tree().has_network_peer():
 		if (Input.is_action_pressed("ui_up")) and not chatting:
 			ismoving = true
 			if not flies:
@@ -321,17 +330,23 @@ func _process(delta):
 		translationcamera=$Pivot/FPSCamera.get_global_transform().origin
 
 func _ready():
-	$Model/Model.get_surface_material(0).albedo_color = options.get("player", "color")
-	if not name_label:
-		set_player_name(options.get("player", "name"))
-	else:
-		set_player_name(name_label)
+	#$Model/Model.get_surface_material(0).albedo_color = options.get("player", "color")
+	#if not name_label:
+	#	set_player_name(options.get("player", "name"))
+	#else:
+	#	set_player_name(name_label)
 	
-	$Pivot/FPSCamera/Chat.connect("disable_movement", self, "toggle_chatting")
+	
 	CHAR_SCALE = scale
 	set_process_input(true)
 	if input_processing:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	var Camera_FPS = load("res://assets/Player/FPSCamera.tscn")
+	Camera_FPS = Camera_FPS.instance()
+	Camera_FPS.target = get_node("Pivot").get_path()
+	get_tree().get_root().add_child(Camera_FPS)
+	#get_tree().get_root().get_node(FPSCamera/Chat).connect("disable_movement", self, "toggle_chatting")
+	initialized = true
 
 func set_player_name(new_name):
 	get_node("label").set_text(new_name)
